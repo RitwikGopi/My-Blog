@@ -1,0 +1,75 @@
+---
+layout: post
+title: Sketching Robotic Arm
+date: 2015-12-07 11:35:28.000000000 +05:30
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- My Projects
+tags:
+- automated drawing
+- julia
+- luanchpad projects
+- project
+- robotics
+- sketching robotic arm
+meta:
+  _oembed_050b42660a8c39d9507ef685261a37e5: "{{unknown}}"
+  _oembed_6111ea04b5606c93e68a8e97e9669e11: "{{unknown}}"
+  _oembed_347381013a39448b42f06ed540dc9e71: "{{unknown}}"
+  _oembed_e3397aee0fb863ff02a4ad563b9d9de2: "{{unknown}}"
+  _oembed_db63ff0af2d2040c8e9640065ffab536: "{{unknown}}"
+  draftfeedback_requests: a:1:{s:13:"5663e131c0fe1";a:3:{s:3:"key";s:13:"5663e131c0fe1";s:4:"time";s:10:"1449386289";s:7:"user_id";s:8:"66724388";}}
+  _edit_last: '66724388'
+  geo_public: '0'
+  _oembed_e0740dfc1e08ad46367d7561d8f675ca: "{{unknown}}"
+  _oembed_cfc8f3d0621db1d03ae3fafca191cee6: "{{unknown}}"
+  _oembed_47cd8f0ceaefbbc1b89c2db57c9607d2: "{{unknown}}"
+  _oembed_3464303037e619358e838dc3f61cef9d: "{{unknown}}"
+  _oembed_496adf6727f89f514554481ff2fe7abb: "{{unknown}}"
+  _oembed_6f4bc1f8a38afe15c485d436ac2fb8d5: "{{unknown}}"
+  _publicize_job_id: '17549141483'
+  _oembed_40e6ace3900508bed693a1303a8db833: "{{unknown}}"
+  _oembed_1ec8129836214258d91d477aed1b27ed: "{{unknown}}"
+  _oembed_181fcdfceed5a34877210bef779dfe2c: "{{unknown}}"
+  _oembed_63edf8313de7965ced8fb63e50f47635: "{{unknown}}"
+  _oembed_04f5cfa5c8f17f11dde9d1c16f5e48be: "{{unknown}}"
+  _oembed_cbd2acb04aaaa8c73bae6d78c552fbbe: "{{unknown}}"
+  _oembed_a5e3b2454d7b3047a29bfd7ed2e5a572: "{{unknown}}"
+  _oembed_474442e3f9288756a4eb3c973851a3e7: "{{unknown}}"
+  _oembed_e24c9812672aaaf5b20493f17856386d: "{{unknown}}"
+  _oembed_787bd354bc2778a12107f29b7c0d7c2e: "{{unknown}}"
+author:
+  login: ritwikgopi
+  email: ritwikgopi@gmail.com
+  display_name: Ritwik
+  first_name: ''
+  last_name: ''
+permalink: "/2015/12/07/sketching-robotic-arm/"
+---
+<p>This was a project which I did during my college days. At that time I used MATLAB for programming and an Atmega based development board for the control. Anyway now as I am learning programming in more depth and came across a new language called Julia , which is a really great open source alternative for MATLAB. In fact I felt it was quite better than MATLAB in some aspects. I will explain why I felt that at the end of this post.</p>
+<p>[youtube https://www.youtube.com/watch?v=5tbJQenO-l8]</p>
+<p>The real inspiration for this project was google chrome labs' Sketchbots (https://www.youtube.com/watch?v=3HnO2wSyYuI). The thing is sketching robotic arm is a very simple example to show the ability of a robotic arm to perform sophisticated tasks. For all the robotic arms the greatest deal was to move it to a desired position. I thought it could be a first step to many other projects, say 3D printers, PCB drilling machines( I hated it when we had to hand drill our PCBs), an automated welding mechanism, and may be a CNC type cutter.</p>
+<p>You can find all the documents related to this project in my github repo below</p>
+<p>https://github.com/RitwikGopi/roboticarm</p>
+<p>And for a detailed technical side you can refer my project report if you like.</p>
+<p>https://github.com/RitwikGopi/roboticarm/blob/master/final%20report.pdf</p>
+<p>The idea is simple. You feed an image that you want to draw to a program, and your arm should draw it. I will explain shortly how I achieved it step by step. First thing I needed to do was to select what kind of arm to build and create a mathematical model. For this specific purpose an arm with a 2 degree of freedom of motion was enough. So my arm basically has 2 points in which it has rotatory motion and 2 linkages. And rotating angles were limited to 180 degree( mainly because common servos have 180 degree motion and also to make a resemblance to human arm).</p>
+<p><a href="https://ritwikgopi.files.wordpress.com/2015/12/model.jpg" rel="attachment wp-att-119"><img class="alignnone wp-image-119 size-medium" src="{{ site.baseurl }}/assets/2015/12/model.jpg?w=300" alt="model" width="300" height="211" /></a></p>
+<p>Above picture shows a basic model of arm I designed. And using kinematic equations( more like basic trigonometric equations and stuff) we will calculate the drawing area of arm. That means if angles made by linkages of arm are known we can find the point at which arm has reached by calculating x and y co-ordinates. So if we can find all the points for combination of all angles possible by 2 linkages we can find the total drawing area. To find this I wrote a code.</p>
+<p>https://github.com/RitwikGopi/roboticarm/blob/master/drawing_area.jl</p>
+<p>It is a function with arguments as length of linkages of arm. So if you call this function in Julia with lengths of linkages it will plot the total area where your arm can draw. A sample plot with arm lengths as 10,10</p>
+<p><a href="https://ritwikgopi.files.wordpress.com/2015/12/working-area.jpg" rel="attachment wp-att-120"><img class="alignnone wp-image-120 size-medium" src="{{ site.baseurl }}/assets/2015/12/working-area.jpg?w=300" alt="working area" width="300" height="225" /></a></p>
+<p>Our next task is to select a suitable area. I selected a rectangular are with x-axis from -16 to -4 and y-axis from -6 to 8. And I built the arm with 2 servos and other available things.</p>
+<p><img class="alignnone wp-image-121 size-medium" src="{{ site.baseurl }}/assets/2015/12/arm.jpg?w=300" alt="Jpeg" width="300" height="169" /></p>
+<p>Yep that's my arm. Not what you expected right? I really didn't have a lot of facilities or money, so had to make it with what I had. Okay let's get going. So after selecting a drawing area, I calculated angles needed by servo to reach all the points in the drawing area using inverse-kinematics. I stored those values in two 2D arrays, so that I could use that as a look up table.(You can refer my project report for a detailed explanation on this)</p>
+<p>My next step was to load the image. There is a straight forward function to open the image "imread(filename)". Anyway for further processing I needed to convert the image to black and white(not grey scale, in BW format 0 represents black and 1 represents white). I used a built-in function for that in MATLAB, anyway I couldn't find one in julia. So I did a trick to get around it. I drew image using a single basic color(red in my case) and then after loading image I extracted array representing blue color( I could have used green as well). So I will get an array similar to black and white of the image.</p>
+<p>Next step was to calculate the angles required to draw points present in the image. First I thought of doing a row by row search and drawing the image. But it would be then more like a plotting robotic arm rather than a sketching robotic arm ( also i don't have a 3rd servo to move the pen up and down). So I formulated a new algorithm. First it would search for a point by row, then once it finds a point it will search it's adjacent pixels for a point. This step is continued recursively using a function to find a continues line.</p>
+<p>https://github.com/RitwikGopi/roboticarm/blob/master/check.jl</p>
+<p>This is where I found Julia better than MATLAB. In MATLAB main problem I faced was that the recursion depth of MATLAB was around 500. So if there were more than 500 continues points program will crash. So I had to make exit the function once it reached 500 continues points and start over again. But in case of julia I didn't face such a problem. I was able to check around 2000 continues points and the program was working fine. In fact it was enough for most cases. In this function it will store the angles needed to draw those points in order in an array.</p>
+<p>Then in the next step I calculated pwm values needed to be generated for <img class=" wp-image-123 alignright" src="{{ site.baseurl }}/assets/2015/12/launchpad-tivac-01.jpg?w=300" alt="launchpad-tivac-01" width="223" height="226" />controlling the servos. The servo control was done using Tiva C Series TM4C123G LaunchPad. I used uart communication to send the pwm values to micro-controller and then generated pwm using those values. So that way my arm could draw the image :)<br />
+https://github.<img class="size-medium wp-image-122 alignleft" src="{{ site.baseurl }}/assets/2015/12/p_20151204_104157.jpg?w=168" alt="Jpeg" width="168" height="300" />com/RitwikGopi/roboticarm/blob/master/send.jl</p>
+<p>I used the above function for the purpose of sending pwm values. I will read pwm values from each array for servos and send it one by one.</p>
