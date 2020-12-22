@@ -89,7 +89,7 @@ permalink: "/2016/01/19/goodness-of-fit-a-continuation-of-curve-fitting/"
 &gt;&gt;&gt; show()
 </span></pre>
 <p>The output graph is as given below. Blue dots represents the data read and the curve represents calculated values.</p>
-<p><a href="https://ritwikgopi.files.wordpress.com/2016/01/figure_11.png" rel="attachment wp-att-349"><img class="alignnone wp-image-349 size-full" src="{{ site.baseurl }}/assets/2016/01/figure_11.png" alt="figure_11" width="812" height="612" /></a></p>
+<p><a href="{{ site.baseurl }}/assets/2016/01/figure_11.png" rel="attachment wp-att-349"><img class="alignnone wp-image-349 size-full" src="{{ site.baseurl }}/assets/2016/01/figure_11.png" alt="figure_11" width="812" height="612" /></a></p>
 <p>As you can see the linear graph is quite good. But is it the best fit? We can see that last point at 30 is pretty far from the line. Also, since we actually have an idea about the shape of the graph we know this is wrong. So let's try other graphs. Let's plot the curve at different degrees.</p>
 <pre style="text-align:left;background-color:#330033;"><span style="color:#ffffff;">&gt;&gt;&gt; V2 = array([i for i in xrange(35)])
 &gt;&gt;&gt; V2
@@ -112,7 +112,7 @@ array([ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
 &gt;&gt;&gt; show()
 </span></pre>
 <p>Here we have used a new array to calculate the power using the coefficients got from <b>poylfit()</b> so that we will get a smoother curve. We have calculated curve with degrees 1,2 and 3. And plotted it for comparison. The plot is added below</p>
-<p><a href="https://ritwikgopi.files.wordpress.com/2016/01/figure_123.png" rel="attachment wp-att-350"><img class="alignnone wp-image-350 size-full" src="{{ site.baseurl }}/assets/2016/01/figure_123.png" alt="figure_123" width="1618" height="887" /></a></p>
+<p><a href="{{ site.baseurl }}/assets/2016/01/figure_123.png" rel="attachment wp-att-350"><img class="alignnone wp-image-350 size-full" src="{{ site.baseurl }}/assets/2016/01/figure_123.png" alt="figure_123" width="1618" height="887" /></a></p>
 <p>As you can observe from the graph the best fit is when we use the cubical relation for finding the curve. Is it the best? What if we use a 4th-degree polynomial fit? It is not easy to eyeball the output every time. Is there a solution to this problem? The answer is yes, there is. We can decide the goodness of fit using the <strong>coefficient of determination</strong> (denoted by R<sup>2</sup>).  We can find it by</p>
 <p><img class="mwe-math-fallback-image-inline tex" src="{{ site.baseurl }}/assets/2016/01/d6b7e64a7c677ae32bc62d675107dac8.png" alt="SS_\text{res}=\sum_i (y_i - f_i)^2\," /></p>
 <p>where  <strong>y</strong> represents each data point we have and <strong>f</strong> represents predictions we made for each corresponding data points</p>
@@ -145,7 +145,7 @@ array([ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
 1.0
 </span></pre>
 <p>As you can see when we used a 6th-degree polynomial curve we get <span style="background-color:#f5f6f5;">R</span><span style="font-size:11.25px;line-height:0;position:relative;vertical-align:baseline;top:-.5em;background-color:#f5f6f5;">2</span>R^2 as 1. Let's just plot all this and see the difference.</p>
-<p><a href="https://ritwikgopi.files.wordpress.com/2016/01/figure_123456.png" rel="attachment wp-att-353"><img class="alignnone wp-image-353 size-full" src="{{ site.baseurl }}/assets/2016/01/figure_123456.png" alt="figure_123456" width="1618" height="887" /></a><br />
+<p><a href="{{ site.baseurl }}/assets/2016/01/figure_123456.png" rel="attachment wp-att-353"><img class="alignnone wp-image-353 size-full" src="{{ site.baseurl }}/assets/2016/01/figure_123456.png" alt="figure_123456" width="1618" height="887" /></a><br />
 Since we have found a good fit now let's find the maximum power point. Recalculate the power for more voltage points. We can use the <strong>V2 </strong>we created earlier for this.</p>
 <pre style="text-align:left;background-color:#330033;"><span style="color:#ffffff;">&gt;&gt;&gt;P_ = polyval(c6,V2)
 &gt;&gt;&gt; list(P_).index(max(P_))
