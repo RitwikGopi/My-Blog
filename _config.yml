@@ -10,9 +10,12 @@ description: Coding Geek
 
 author:
   name: Ritwik G
-  linkedin: https://www.linkedin.com/in/ritwik-g/
   picture: https://avatars0.githubusercontent.com/u/13065422
   email: ritwikgopi@gmail.com
+  links:
+    - title: Linkedin
+      url: https://www.linkedin.com/in/ritwik-g/
+      icon: fab fa-twitter-square
 
 tag_archive_path: "/tags/#"
 
