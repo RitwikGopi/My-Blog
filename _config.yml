@@ -16,6 +16,12 @@ read_time: true
 words_per_minute: 200
 layout: home
 paginate: true
+markdown: kramdown
+mathjax:
+  enable: true
+  combo: "tex-svg"
+  tags: "ams"
+
 #
 # Flags below are optional
 #
