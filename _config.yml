@@ -11,6 +11,11 @@ description: Coding Geek
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://avatars0.githubusercontent.com/u/13065422
 logo: https://avatars0.githubusercontent.com/u/13065422
+skin: "/assets/css/skins/dark.css"
+read_time: true
+words_per_minute: 200
+layout: home
+paginate: true
 #
 # Flags below are optional
 #
