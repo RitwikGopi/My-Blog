@@ -1,7 +1,7 @@
 ---
-title: My Posts
+title: Home
 layout: collection
-permalink: /posts/
 collection: posts
 entries_layout: grid
+limit: 6
 ---
