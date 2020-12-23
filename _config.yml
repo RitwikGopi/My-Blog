@@ -9,12 +9,35 @@ name: Ritwik G
 description: Coding Geek
 
 author:
-  name: 'Ritwik G'
-  picture: 'https://avatars0.githubusercontent.com/u/13065422'
+  name: Michael Rose
+  picture: /images/michael-rose-photo.jpg
+  email:
+  twitter: mmistakes
   links:
-    - title: 'Linkedin'
-      url: 'https://www.linkedin.com/in/ritwik-g/''
-      icon: 'fab fa-twitter-square'
+    - title: Twitter
+      url: https://twitter.com/mmistakes
+      icon: fab fa-twitter-square
+    - title: Instagram
+      url: https://instagram.com/mmistakes
+      icon: fab fa-instagram
+    - title: GitHub
+      url: https://github.com/mmistakes
+      icon: fab fa-github-square
+
+# Footer Links
+footer_links:
+  - title: Twitter
+    url: https://twitter.com/mmistakes
+    icon: fab fa-twitter-square
+  - title: Instagram
+    url: https://instagram.com/mmistakes
+    icon: fab fa-instagram
+  - title: GitHub
+    url: https://github.com/mmistakes
+    icon: fab fa-github-square
+  - title: Feed
+    url: atom.xml
+    icon: fas fa-rss-square
 
 tag_archive_path: "/tags/#"
 
