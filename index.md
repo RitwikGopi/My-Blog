@@ -1,7 +1,4 @@
 ---
-layout: home
-paginate: true
----
 title: Home
 layout: collection
 collection: posts
