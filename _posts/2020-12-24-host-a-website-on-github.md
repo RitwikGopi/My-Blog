@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 'HOSTING A WEBSITE ON YOUR MACHINE : PART 1'
+title: 'HOST A WEBSITE ON GITHUB'
 image:
   path: '/assets/2015/09/screenshot-from-2015-09-19-145500.png'
   thumbnail: '/assets/2015/09/screenshot-from-2015-09-19-145500.png'
-excerpt: 'So this is my first post, and I thought I would write something interesting and simple. Ever since I started using internet I always wanted to create my own website. Specifically....'
+excerpt: ''
 date: 2020-12-24 17:90:52.000000000 +05:30
 type: post
 status: publish
@@ -16,7 +16,7 @@ tags:
   - hosting website
   - website
   - github
-permalink: "/2015/09/28/4/"
+permalink: "/2020/12/24/1/"
 ---
 
 # TEST THIS POST
