@@ -31,7 +31,7 @@ In order to start first you need to create a repo and push your static web code 
 
 Now all you need to do is go to your repo's settings and enable github pages and then select the branch and path of your index file for your webpage.
 
-And that's all you are done. You have hosted your website on github. Github will give you a subdomain which you can use to access your web page. Now if you are someone looking to customize your website little bit more with a custom domain(For non technical folks if you don't want your web address to looks like <ritwikgopi.github.io> but more like <ritwikg.com>) you need to shell out some bucks and get a domain for yourself. Once you have that you can point your domain to this page using the custom domain option.
+And that's all you are done. You have hosted your website on github. Github will give you a subdomain which you can use to access your web page. Now if you are someone looking to customize your website little bit more with a custom domain you need to shell out some bucks and get a domain for yourself. Once you have that you can point your domain to this page using the custom domain option.
 
 Now find out more about github pages & git lab pages from below links
 
