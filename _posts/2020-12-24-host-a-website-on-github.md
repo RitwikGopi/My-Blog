@@ -32,21 +32,21 @@ In order to start first you need to create a repo and push your static web code 
 
 Now all you need to do is go to your repo's settings and enable github pages and then select the branch and path of your index file for your webpage.
 
-And that's all you are done. You have hosted your website on github. Github will give you a subdomain which you can use to access your web page. Now if you are someone looking to customize your website little bit more with a custom domain(For non technical folks if you don't want your web address to looks like [ritwikgopi.github.io]() but more like [ritwikg.com]()) you need to shell out some bucks and get a domain for yourself. Once you have that you can point your domain to this page using the custom domain option.
+And that's all you are done. You have hosted your website on github. Github will give you a subdomain which you can use to access your web page. Now if you are someone looking to customize your website little bit more with a custom domain(For non technical folks if you don't want your web address to looks like <ritwikgopi.github.io> but more like <ritwikg.com>) you need to shell out some bucks and get a domain for yourself. Once you have that you can point your domain to this page using the custom domain option.
 
 Now find out more about github pages & git lab pages from below links
 
-[https://pages.github.com/]()
+<https://pages.github.com/>
 
-[https://docs.gitlab.com/ee/user/project/pages/]()
+<https://docs.gitlab.com/ee/user/project/pages/>
 
-So you should have realised by now I have hosted this blog you are reading as well on github pages. I have used an awesome tool called jekyll and created this blog. It even helped me import my old wordpress blog content to here. And this theme I used is [https://github.com/mmistakes/so-simple-theme]()
-
-
-You can find more about jekyll at [https://jekyllrb.com/]()
+So you should have realised by now I have hosted this blog you are reading as well on github pages. I have used an awesome tool called jekyll and created this blog. It even helped me import my old wordpress blog content to here. And this theme I used is <https://github.com/mmistakes/so-simple-theme>
 
 
-I had also done a small project on flutter and hosted the same in the gitlab pages in the past. Not very awesome but you can check it out at [https://connect4.ritwikg.com/#/]()
+You can find more about jekyll at <https://jekyllrb.com/>
 
-If interested you can find the source code for same at [https://gitlab.com/ritwikgopi/connect-4-flutter]()
+
+I had also done a small project on flutter and hosted the same in the gitlab pages in the past. Not very awesome but you can check it out at <https://connect4.ritwikg.com/#/>
+
+If interested you can find the source code for same at <https://gitlab.com/ritwikgopi/connect-4-flutter>
 
