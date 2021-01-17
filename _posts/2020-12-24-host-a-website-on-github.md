@@ -27,7 +27,7 @@ So the thing about github hosting is that it is completely free(At least as of w
 
 So let's jump into how to do this. I won't be going in details and turning this article into a full blown tutorial. I believe the documentation and numerous existing articles should be enough for that.
 
-In order to start first you need to create a repo and push your static web code into a branch(I hope the reader has a basic understanding of git. If not it's not rocket science. Just do a quick web search for "[how to use git](https://www.google.com/search?q=how+to+use+git)"). If you are using simple HTML, CSS & JS you can just straight away push it in to your repo. But if you are using something like react, flutter etc create your build and push the artifacts into a branch.
+In order to start first you need to create a repo and push your static web code into a branch(I hope the reader has a basic understanding of git. If not it's not rocket science. Just do a quick web search for "[how to use git](https://www.google.com/search?q=how+to+use+git){:target="_blank"}"). If you are using simple HTML, CSS & JS you can just straight away push it in to your repo. But if you are using something like react, flutter etc create your build and push the artifacts into a branch.
 
 Now all you need to do is go to your repo's settings and enable github pages and then select the branch and path of your index file for your webpage.
 
@@ -35,17 +35,17 @@ And that's all you are done. You have hosted your website on github. Github will
 
 Now find out more about github pages & git lab pages from below links
 
-<https://pages.github.com/>
+<https://pages.github.com/>{:target="_blank"}
 
-<https://docs.gitlab.com/ee/user/project/pages/>
+<https://docs.gitlab.com/ee/user/project/pages/>{:target="_blank"}
 
-So you should have realised by now I have hosted this blog you are reading as well on github pages. I have used an awesome tool called jekyll and created this blog. It even helped me import my old wordpress blog content to here. And this theme I used is <https://github.com/mmistakes/so-simple-theme>
-
-
-You can find more about jekyll at <https://jekyllrb.com/>
+So you should have realised by now I have hosted this blog you are reading as well on github pages. I have used an awesome tool called jekyll and created this blog. It even helped me import my old wordpress blog content to here. And this theme I used is <https://github.com/mmistakes/so-simple-theme>{:target="_blank"}
 
 
-I had also done a small project on flutter and hosted the same in the gitlab pages in the past. Not very awesome but you can check it out at <https://connect4.ritwikg.com/#/>
+You can find more about jekyll at <https://jekyllrb.com/>{:target="_blank"}
 
-If interested you can find the source code for same at <https://gitlab.com/ritwikgopi/connect-4-flutter>
+
+I had also done a small project on flutter and hosted the same in the gitlab pages in the past. Not very awesome but you can check it out at <https://connect4.ritwikg.com/#/>{:target="_blank"}
+
+If interested you can find the source code for same at <https://gitlab.com/ritwikgopi/connect-4-flutter>{:target="_blank"}
 
