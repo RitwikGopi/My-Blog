@@ -18,7 +18,6 @@ tags:
 permalink: "/2020/12/24/1/"
 ---
 
-# Host a website on github
 
 Hosting a website is something that is somewhat tricky. While some of you may know how to develop a website you might be totally in the dark when it comes to how to  host it. But don't you worry there is an easy and cheap way to do it (of course with some caveats.)
 
