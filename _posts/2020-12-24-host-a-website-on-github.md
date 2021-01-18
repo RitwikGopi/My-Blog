@@ -9,7 +9,7 @@ date: 2020-12-24 17:90:52.000000000 +05:30
 type: post
 status: publish
 categories:
-  - Websites
+  - Technical
 tags:
   - free hosting
   - hosting
