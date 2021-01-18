@@ -20,6 +20,9 @@ author:
     - title: GitHub
       url: https://github.com/RitwikGopi
       icon: fab fa-github-square
+    - title: Instagram
+      url: https://www.instagram.com/ritwikgopi/
+      icon: fab fa-instagram
 
 # Footer Links
 footer_links:
@@ -29,6 +32,9 @@ footer_links:
   - title: GitHub
     url: https://github.com/RitwikGopi
     icon: fab fa-github-square
+  - title: Instagram
+    url: https://www.instagram.com/ritwikgopi/
+    icon: fab fa-instagram
 
 tag_archive_path: "/tags/#"
 
