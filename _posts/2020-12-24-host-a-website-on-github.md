@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "HOST A WEBSITE ON GITHUB"
+share: true
 image:
   thumbnail: "/assets/2021/github-pages.png"
 excerpt: ""
