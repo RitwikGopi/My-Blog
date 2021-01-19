@@ -1,7 +1,7 @@
 ---
 title: Home
 layout: collection
-collection: category
+collection: categories
 entries_layout: grid
 limit: 3
 ---
