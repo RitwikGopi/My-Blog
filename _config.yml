@@ -92,7 +92,7 @@ permalink: /:title/
 
 # Collections
 collections:
-  recipes:
+  categories:
     output: true
     permalink: /:collection/:path/
 
