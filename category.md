@@ -1,7 +1,7 @@
 ---
-title: categories
+title: Recipes
 layout: collection
-collection: categories
+permalink: /recipes/
+collection: recipes
 entries_layout: grid
-limit: 3
 ---
