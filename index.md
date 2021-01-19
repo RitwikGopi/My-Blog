@@ -1,7 +1,7 @@
 ---
 title: Home
 layout: collection
-collection: posts
+collection: recipes
 entries_layout: grid
 limit: 3
 ---
