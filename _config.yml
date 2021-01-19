@@ -89,7 +89,6 @@ baseurl:
 #
 
 permalink: /:categories/:title/
-markdown: kramdown
 
 # Taxonomy pages
 category_archive_path: "/categories/#"
