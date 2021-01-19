@@ -98,7 +98,7 @@ tag_archive_path: "/tags/"
 # Collections
 collections:
   categories:
-    output: true
+    output: false
     permalink: /:collection/:path/
 
 # The release of Jekyll Now that you're using
