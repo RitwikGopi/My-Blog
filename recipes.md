@@ -1,9 +1,9 @@
 ---
 title: Recipes
 layout: collection
-permalink: /recipes/
-collection: posts
+permalink: /categories/
+collection: categories
 entries_layout: grid
 ---
 
-Sample document listing for the collection `_recipes`.
+Sample document listing for the collection `_categories`.
