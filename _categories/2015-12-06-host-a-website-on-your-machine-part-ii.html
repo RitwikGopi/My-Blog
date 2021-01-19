@@ -1,0 +1,39 @@
+---
+layout: post
+title: 'HOST A WEBSITE ON YOUR MACHINE : PART II'
+share: true
+image:
+  thumbnail: '/assets/2015/12/screenshot-from-2015-09-27-222214.png'
+excerpt: ''
+date: 2015-12-06 12:06:06.000000000 +05:30
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Technical
+tags:
+- free hosting
+- hosting
+- website
+meta:
+  _edit_last: '66724388'
+  geo_public: '0'
+  _publicize_job_id: '17519515776'
+
+permalink: "/2015/12/06/host-a-website-on-your-machine-part-ii/"
+---
+<p>Let's begin with our local machine setup. First thing we need to do is make the local IP address of our machine static. You can see on the pictures above the IP address of my pi is <em>192.168.1.5 </em>this is assigned to it by router. In fact every time when our device gets disconnected from the router and gets reconnected, there is a pretty good chance that our device IP could change according to the number of other devices and order in which it get connected. First thing we need to do is make your IP static in your local network.</p>
+<p>This step is going to be different depending up on routers. I will show you what I did in my router. My router is from D-Link. I believe this steps will be somewhat similar in all routers. First in your browser type the IP of your router. Typically it is 192.168.1.1 or 192.168.0.1. If this doesn't work just go through google for "how to find my router IP" something like that.</p>
+<p>Okay. Once you entered this address and hit go, you will be prompted to enter the username and password of your router. If you are logging in it for first time there is a good chance your default username and password is 'admin'. Enter your credentials and once you are in the control panel of your router, find a menu called LAN(Local Area Network). In that you can see a table named 'Static IP list' or something similar. In this what you have to do is enter the MAC Address of the machine on which you hosted your site, and assign a static IP for it. So that every time you connect your machine it will have same IP. A wise choice is to select a number after 50 or something. Suppose we choose something like 192.168.1.5 and if in our network there are some 10 devices, it is possible that other device might be assigned with this IP if our hosted device is not connected. So it's wise to choose a big number.</p>
+<p><a href="{{ site.baseurl }}/assets/2015/12/screenshot-from-2015-09-27-222214.png"><img class="alignnone wp-image-79 size-large" src="{{ site.baseurl }}/assets/2015/12/screenshot-from-2015-09-27-222214.png?w=880" alt="Screenshot from 2015-09-27 22:22:14" width="880" height="461" /></a></p>
+<p>192.168.1.66 . That is the IP address I assigned for my raspberry pi. From now when ever my raspberry pi is connected to my router it will be assigned this IP address in my local network.</p>
+<p>Now comes the tricky concept. Port forwarding. I suggest you do some more research on this topic than what I am gonna explain here, since my knowledge is limited as well as I am trying to keep this post as brief as possible. Let's think of our home network. Our router is the gateway between the Internet and our local network. In our network we might have several devices. And a lot of requests will be coming from internet to our device. Then if some one is requesting for our website how will we redirect it to the correct IP address of our hosted device? To do this we use port forwarding. Suppose we are accessing a website like <strong>http://ritwikgopi.wordpress.com</strong> , or lets say <strong>www.google.com </strong>we are actually making that request through port 80. Try typing in <strong>www.google.com:80</strong> . You can see that you will be taken to google's home page. Port 80 is assigned for HTTP requests which we will be needing. If you change that 80 to some other number say 22 it wont work. Because port 22 is not assigned for HTTP.</p>
+<p>Ok. Back to topic. Port forwarding. So when a request comes through port 80 we know that it is an HTTP request. Now what we need to do is direct that request to the IP of device on which we hosted our site. This way when ever an HTTP request comes in it will be directed to our hosted machines address and the hosted site will be shown. To do this we use port forwarding. Procedure to do port forwarding could vary from router to router so please check your router's manual before proceeding. In your router's control panel you will find a menu named 'PORT FORWARDING' or  'NAT'. Go to that menu. Now you will get a page like below.</p>
+<p><a href="{{ site.baseurl }}/assets/2015/12/screenshot-from-2015-09-27-225513.png"><img class="alignnone wp-image-85 size-large" src="{{ site.baseurl }}/assets/2015/12/screenshot-from-2015-09-27-225513.png?w=880" alt="Screenshot from 2015-09-27 22:55:13" width="880" height="457" /></a></p>
+<p>click add. Then select Web Server(HTTP) in service and set the IP as your hosted devices IP.</p>
+<p><a href="{{ site.baseurl }}/assets/2015/12/screenshot-from-2015-09-27-225800.png"><img class="alignnone wp-image-86 size-large" src="{{ site.baseurl }}/assets/2015/12/screenshot-from-2015-09-27-225800.png?w=880" alt="Screenshot from 2015-09-27 22:58:00" width="880" height="469" /></a></p>
+<p>Save it and port forwarding is done. Now to access your website you need IP address of your connection. In other terms the IP provided to you buy your ISP. It's simple to find out. Just go to google and search 'IP'. You can see your IP address. Now browse your IP from some other network.(Not from your home. From your friend's home or your mobile data connection or something. If you try to access the IP from a device connected in that same network it will just show your router's page.)</p>
+<p>Isn't it cool? But is it all you need to do? Is there anything missing? Most of the home users will have a dynamic IP. Meaning your IP will change from time to time. So it will be impossible to keep track of the IP. In such a case you can use a dynamic DNS service to bind your IP address to a URL. Luckily for me D-Link was providing free DDNS service. What it basically does is that it will keep track of the changing IP and updates the URL with current IP of your connection. So you will be able to access your system using that URL any time.</p>
+<p>&nbsp;</p>

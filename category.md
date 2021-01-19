@@ -1,5 +1,5 @@
 ---
-title: Home
+title: categories
 layout: collection
 collection: categories
 entries_layout: grid

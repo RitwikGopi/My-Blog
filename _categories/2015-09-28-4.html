@@ -1,0 +1,54 @@
+---
+layout: post
+title: 'HOSTING A WEBSITE ON YOUR MACHINE : PART 1'
+share: true
+image:
+  thumbnail: '/assets/2015/09/screenshot-from-2015-09-19-145500.png'
+excerpt: ''
+date: 2015-09-28 15:11:52.000000000 +05:30
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+  - Technical
+tags:
+  - free hosting
+  - hosting
+  - website
+meta:
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '15245159503'
+  _edit_last: '66724388'
+  draftfeedback_requests: a:3:{s:13:"55fd37dc6c169";a:3:{s:3:"key";s:13:"55fd37dc6c169";s:4:"time";s:10:"1442658268";s:7:"user_id";s:8:"66724388";}s:13:"55fd381b22767";a:3:{s:3:"key";s:13:"55fd381b22767";s:4:"time";s:10:"1442658331";s:7:"user_id";s:8:"66724388";}s:13:"55fd686014175";a:3:{s:3:"key";s:13:"55fd686014175";s:4:"time";s:10:"1442670688";s:7:"user_id";s:8:"66724388";}}
+  geo_public: '0'
+  draft_feedback: |-
+    a:1:{s:13:"55fd381b22767";a:1:{i:0;a:2:{s:4:"time";s:10:"1442666211";s:7:"content";s:246:"There are  some grammatical errors here n there..But can love with those.The rest seems simple and interesting way to learn how to set up a waebsite for a beginner like me :)
+    Kepp up thee good work..looking forward to more posts in this series :)";}}}
+
+permalink: "/2015/09/28/4/"
+---
+<hr />
+<p>So this is my first post, and I thought I would write something interesting and simple. Ever since I started using internet I always wanted to create my own website. Specifically I wanted to create a website on my laptop. I know there are some hosting services which is entirely free. But what is the fun in that?? In this post I will walk you through how did I host my first website on my machine.</p>
+<p>And for your information this is not a perfect way to set up a website as far as I know. But this is just a fun thing to do for beginners like me. And before everything gets started I have to warn you there is a certain level of risk involved in hosting a website on your machine, since we are practically giving strangers access to your computer. I am not really sure about those risks, that's what they say on all the articles I found and I think its true. In my experience with HTTP server I don't know what are the risks, but when I hosted a ssh server , I found that on day one itself there were some access request to my server from unknown IPs. Anyway we are not going to discuss about ssh servers but HTTP server which we use to host the website.</p>
+<p>Ok!!! Enough talking and let's get started. So first things first, what all is required. A computer that can be kept online for 24/7 ( or at least when you need your site to be available), a working internet connection. And I used raspberry pi to host my site since I couldn't keep my laptop home for 24/7.</p>
+<p>First thing you need to do is set up a web server on your system. I used Apache for setting up my web server. If you are using Ubuntu you probably might have the Apache loaded already. Anyway in case of the raspberry pi it was not. So first I had to install Apache using the command</p>
+<p style="text-align:center;background-color:#330033;"><span style="color:#ffffff;">sudo apt-get install apache2</span></p>
+<p>You can use this command in both raspberry pi and Ubuntu. Once you have finished installing that you have actually created a server on your system. Now let's see if it's up and running.</p>
+<p style="text-align:center;background-color:#330033;"><span style="color:#ffffff;">sudo service apache2 status</span></p>
+<p>This will show us if our server is active or not.  And if it is not active use command</p>
+<p style="text-align:center;background-color:#330033;"><span style="color:#ffffff;">sudo service apache2 start</span></p>
+<p><a href="{{ site.baseurl }}/assets/2015/09/screenshot-from-2015-09-19-144809.png"><img class="alignnone wp-image-9 size-large" src="{{ site.baseurl }}/assets/2015/09/screenshot-from-2015-09-19-144809.png?w=660" alt="status of apache server" width="660" height="303" /></a></p>
+<p>now you have your server up and running. If you open your browser and type "localhost" in address bar you would get a page like below.</p>
+<p><a href="{{ site.baseurl }}/assets/2015/09/screenshot-from-2015-09-19-145235.png"><img class="alignnone size-medium wp-image-10" src="{{ site.baseurl }}/assets/2015/09/screenshot-from-2015-09-19-145235.png?w=300" alt="localhost on pi" width="300" height="166" /></a> <a href="{{ site.baseurl }}/assets/2015/09/screenshot-from-2015-09-19-145500.png"><img class="alignnone size-medium wp-image-11" src="{{ site.baseurl }}/assets/2015/09/screenshot-from-2015-09-19-145500.png?w=300" alt="localhost on ubuntu" width="300" height="166" /></a></p>
+<p>First image is page you get when you set up server on pi and second one on an Ubuntu loaded laptop. Cool thing is now you can access this page from any device on your local network by simply typing in the ip address of the server machine on your network.</p>
+<p>Now let's see how we can set up a webpage. So that we can change default page doing now. I will be creating a simple webpage showing "HELLO_WORLD!!!!". For that you need to go to <em>/var/www/ </em>and create your website there(we will just delete the index page that already exists which is our default page shown before). And you will be needing root permission to access the files in this directory</p>
+<p style="text-align:center;background-color:#330033;"><span style="color:#ffffff;">cd /var/www<br />
+sudo rm index.html<br />
+sudo vi index.html</span></p>
+<p>Now create a simple html page to display what ever you like and in my case "HELLO_WORLD!!". And after saving it open your browser and enter your IP. You should have your webpage displayed on your browser</p>
+<p><a href="{{ site.baseurl }}/assets/2015/09/screenshot-from-2015-09-19-153050.png"><img class="alignnone wp-image-26 size-medium" src="{{ site.baseurl }}/assets/2015/09/screenshot-from-2015-09-19-153050.png?w=300" alt="my first page" width="300" height="166" /></a></p>
+<p>Yeah it's cool. We get a page that can be accessed from any of the device in our Network. But that's not enough when we say host a website, right? Of course we need it to be available on internet to call it hosting. So we are gonna do that. But this is the stage where things are gonna get a little bit tough.</p>
+<p>I will continue with it in my next post.</p>

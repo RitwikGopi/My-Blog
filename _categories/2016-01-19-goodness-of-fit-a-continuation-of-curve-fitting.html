@@ -1,0 +1,158 @@
+---
+layout: post
+title: GOODNESS OF FIT - A continuation of curve fitting
+share: true
+image:
+  thumbnail: 'assets/2016/01/figure_123456.png'
+excerpt: ''
+date: 2016-01-19 16:52:32.000000000 +05:30
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Online Courses
+tags:
+  - Curve fitting
+  - data analysis
+  - edx
+  - python
+meta:
+  _edit_last: '66724388'
+  geo_public: '0'
+  draftfeedback_requests: a:1:{s:13:"569e1ab27238c";a:3:{s:3:"key";s:13:"569e1ab27238c";s:4:"time";s:10:"1453202098";s:7:"user_id";s:8:"66724388";}}
+  _publicize_done_13083654: '1'
+  _publicize_job_id: '18902425231'
+  publicize_linkedin_url: https://www.linkedin.com/updates?discuss=&scope=162018501&stype=M&topic=6095173303939383296&type=U&a=EWuq
+  _wpas_done_13059450: '1'
+  publicize_google_plus_url: https://plus.google.com/+RitwikG/posts/GKP3DFNuVDx
+  _publicize_done_13083661: '1'
+  _wpas_done_13059455: '1'
+  _wpas_skip_13059455: '1'
+  _wpas_skip_13059450: '1'
+  _oembed_496adf6727f89f514554481ff2fe7abb: "{{unknown}}"
+  _oembed_3464303037e619358e838dc3f61cef9d: "{{unknown}}"
+  _oembed_e3397aee0fb863ff02a4ad563b9d9de2: "{{unknown}}"
+
+permalink: "/2016/01/19/goodness-of-fit-a-continuation-of-curve-fitting/"
+---
+<p>So in the last post, we discussed a wonderful tool called curve fitting. We concluded the post with a question, how to choose the curve which fits the data points the best. In the previous example, it was easy because we knew beforehand that we have a linear relation between V and I. Let's see another example. For this example, I am choosing the Voltage and Power relation of a solar panel. For solar panels the Voltage and Current relation are not linear so is its relation with power. The significance of this graph is that it is used in MPPT(Maximum Power Point Tracking). A solar panel doesn't deliver the same amount of power at every voltage. The power output of a solar panel is maximum only at a particular voltage which depends on a lot of other conditions like temperature, intensity of the sun etc.</p>
+<p>There are a number o f methods to calculate the maximum power point of a solar panel. In this post, I am trying to use curve fitting tool to find the maximum power point of  a solar panel. Let's start with taking a few readings from solar panel at different Voltages.</p>
+<table style="width:323px;height:294px;">
+<tbody>
+<tr>
+<td style="text-align:center;" align="center"><b>VOLTAGE(V)</b></td>
+<td align="center"><b>POWER(W)</b></td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">40</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">80</td>
+</tr>
+<tr>
+<td align="center">15</td>
+<td align="center">120</td>
+</tr>
+<tr>
+<td align="center">20</td>
+<td align="center">160</td>
+</tr>
+<tr>
+<td align="center">25</td>
+<td align="center">198</td>
+</tr>
+<tr>
+<td align="center">30</td>
+<td align="center">140</td>
+</tr>
+</tbody>
+</table>
+<p>I have taken this values from a <a href="http://www.intechopen.com/source/html/37984/media/image5_w.jpg">V-P curve of a 200W solar panel</a>. Now lets start with programming. First let's create two arrays to represent voltage and power.</p>
+<pre style="text-align:left;background-color:#330033;"><span style="color:#ffffff;">&gt;&gt;&gt; V = array([0,5,10,15,20,25,30])
+&gt;&gt;&gt; P = array([0,40,80,120,160,198,140])
+</span></pre>
+<p>Now let's use the <b>polyfit()</b> tool to find the curve fitting the best. Let's start with linear fit.</p>
+<pre style="text-align:left;background-color:#330033;"><span style="color:#ffffff;">&gt;&gt;&gt; c = polyfit(V,P,1)
+&gt;&gt;&gt; P_calculated = polyval(c,V)
+&gt;&gt;&gt; plot(V,P,"bo")
+[]
+&gt;&gt;&gt; plot(V,P_calculated)
+[]
+&gt;&gt;&gt; show()
+</span></pre>
+<p>The output graph is as given below. Blue dots represents the data read and the curve represents calculated values.</p>
+<p><a href="{{ site.baseurl }}/assets/2016/01/figure_11.png" rel="attachment wp-att-349"><img class="alignnone wp-image-349 size-full" src="{{ site.baseurl }}/assets/2016/01/figure_11.png" alt="figure_11" width="812" height="612" /></a></p>
+<p>As you can see the linear graph is quite good. But is it the best fit? We can see that last point at 30 is pretty far from the line. Also, since we actually have an idea about the shape of the graph we know this is wrong. So let's try other graphs. Let's plot the curve at different degrees.</p>
+<pre style="text-align:left;background-color:#330033;"><span style="color:#ffffff;">&gt;&gt;&gt; V2 = array([i for i in xrange(35)])
+&gt;&gt;&gt; V2
+array([ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+ 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
+ 34])
+&gt;&gt;&gt; c1 = polyfit(V,P,1)
+&gt;&gt;&gt; c2 = polyfit(V,P,2)
+&gt;&gt;&gt; c3 = polyfit(V,P,3)
+&gt;&gt;&gt; plot(V,P,"ro",label = "Readings")
+[]
+&gt;&gt;&gt; plot(V2,polyval(c1,V2), label = "Degree 1")
+[]
+&gt;&gt;&gt; plot(V2,polyval(c2,V2), label = "Degree 2")
+[]
+&gt;&gt;&gt; plot(V2,polyval(c3,V2), label = "Degree 3")
+[]
+&gt;&gt;&gt; legend(loc = 'upper right')
+
+&gt;&gt;&gt; show()
+</span></pre>
+<p>Here we have used a new array to calculate the power using the coefficients got from <b>poylfit()</b> so that we will get a smoother curve. We have calculated curve with degrees 1,2 and 3. And plotted it for comparison. The plot is added below</p>
+<p><a href="{{ site.baseurl }}/assets/2016/01/figure_123.png" rel="attachment wp-att-350"><img class="alignnone wp-image-350 size-full" src="{{ site.baseurl }}/assets/2016/01/figure_123.png" alt="figure_123" width="1618" height="887" /></a></p>
+<p>As you can observe from the graph the best fit is when we use the cubical relation for finding the curve. Is it the best? What if we use a 4th-degree polynomial fit? It is not easy to eyeball the output every time. Is there a solution to this problem? The answer is yes, there is. We can decide the goodness of fit using the <strong>coefficient of determination</strong> (denoted by R<sup>2</sup>).  We can find it by</p>
+<p><img class="mwe-math-fallback-image-inline tex" src="{{ site.baseurl }}/assets/2016/01/d6b7e64a7c677ae32bc62d675107dac8.png" alt="SS_\text{res}=\sum_i (y_i - f_i)^2\," /></p>
+<p>where  <strong>y</strong> represents each data point we have and <strong>f</strong> represents predictions we made for each corresponding data points</p>
+<p><img class="mwe-math-fallback-image-inline tex" src="{{ site.baseurl }}/assets/2016/01/67976e7df3f8a29ef9867a4a35e5c4db.png" alt="SS_\text{tot}=\sum_i (y_i-\bar{y})^2," /></p>
+<p>here also<strong> <em>y</em></strong> for each data point and <strong><em><span style="text-decoration:overline;">y</span></em></strong> represents the mean of data points, then</p>
+<p><img src="{{ site.baseurl }}/assets/2016/01/4253e227d95c290764b310c57ff34625.png" alt="R^2 \equiv 1 - {SS_{\rm res}\over SS_{\rm tot}}.\," /></p>
+<p>Closer this value to the one better our fit is. Let's write a function to calculate <span style="background-color:#f5f6f5;">R</span><span style="font-size:11.25px;line-height:0;position:relative;vertical-align:baseline;top:-.5em;background-color:#f5f6f5;">2</span>.</p>
+<pre style="text-align:left;background-color:#330033;"><span style="color:#ffffff;">def rSquare(measured, estimated):
+    """measured: one dimensional array of measured values
+       estimate: one dimensional array of predicted values"""
+    SEE = ((estimated - measured)**2).sum()
+    mMean = measured.sum()/float(len(measured))
+    MV = ((mMean - measured)**2).sum()
+    return 1 - SEE/MV</span></pre>
+<p>Let's find the <span style="background-color:#f5f6f5;">R</span><span style="font-size:11.25px;line-height:0;position:relative;vertical-align:baseline;top:-.5em;background-color:#f5f6f5;">2</span> for each degree</p>
+<pre style="text-align:left;background-color:#330033;"><span style="color:#ffffff;">&gt;&gt;&gt; rSquare(P,polyval(c1,V))
+0.82008434162298505
+&gt;&gt;&gt; rSquare(P,polyval(c2,V))
+0.92271968890815703
+&gt;&gt;&gt; rSquare(P,polyval(c3,V))
+0.9779194419264573
+&gt;&gt;&gt; c4 = polyfit(V,P,4)
+&gt;&gt;&gt; rSquare(P,polyval(c4,V))
+0.99623615654435815
+&gt;&gt;&gt; c5 = polyfit(V,P,5)
+&gt;&gt;&gt; rSquare(P,polyval(c5,V))
+0.99971097886204496
+&gt;&gt;&gt; c6 = polyfit(V,P,6)
+&gt;&gt;&gt; rSquare(P,polyval(c6,V))
+1.0
+</span></pre>
+<p>As you can see when we used a 6th-degree polynomial curve we get <span style="background-color:#f5f6f5;">R</span><span style="font-size:11.25px;line-height:0;position:relative;vertical-align:baseline;top:-.5em;background-color:#f5f6f5;">2</span>R^2 as 1. Let's just plot all this and see the difference.</p>
+<p><a href="{{ site.baseurl }}/assets/2016/01/figure_123456.png" rel="attachment wp-att-353"><img class="alignnone wp-image-353 size-full" src="{{ site.baseurl }}/assets/2016/01/figure_123456.png" alt="figure_123456" width="1618" height="887" /></a><br />
+Since we have found a good fit now let's find the maximum power point. Recalculate the power for more voltage points. We can use the <strong>V2 </strong>we created earlier for this.</p>
+<pre style="text-align:left;background-color:#330033;"><span style="color:#ffffff;">&gt;&gt;&gt;P_ = polyval(c6,V2)
+&gt;&gt;&gt; list(P_).index(max(P_))
+26
+&gt;&gt;&gt; max(P_)
+200.41482240000522
+&gt;&gt;&gt; V2[26]
+26</span></pre>
+<p>So we can see that the maximum power point is around 26V and the maximum power is 200W. You can cross reference this with <a href="http://www.intechopen.com/source/html/37984/media/image5_w.jpg">P-V curve</a> we used to create this table. This is just an example to show how we can use this tool to find the relation between data. Anyway instead of using 6th-degree polynomial even if we had used 4th degree or 5th degree we would have got a pretty good answer. In this kind of experiments even if we get an answer, it might not be 100% accurate, because there could be an error in readings, as the number of readings changes the curve could also change. In general more the number of points, we would get a better curve. Also, an <span style="background-color:#f5f6f5;">R</span><span style="font-size:11.25px;line-height:0;position:relative;vertical-align:baseline;top:-.5em;background-color:#f5f6f5;">2</span> value of .9 or above could be considered a good enough fit. You might be thinking what is the point in doing all this if we can't find the exact answer. Yeah, you don't find the exact answer, but you have considerably reduced the area in which you got to search for the answer. In this particular answer, maximum power point might not be 26V but it will be in close proximity to that and it reduces a lot of work.</p>
+<p>&nbsp;</p>
