@@ -88,7 +88,7 @@ baseurl:
 # !! You don't need to change any of the configuration flags below !!
 #
 
-# permalink: /:categories/:title/
+permalink: /:title/
 
 # # Taxonomy pages
 # category_archive_path: "/categories/#"
