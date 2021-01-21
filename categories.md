@@ -1,8 +1,8 @@
 ---
-title: Category Archive
-layout: collections
+title: Categories Archive
+layout: collection
 collection: category
 permalink: /categories/
-show_excerpts: false
 entries_layout: grid
+limit: 3
 ---

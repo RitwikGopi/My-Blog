@@ -1,9 +1,9 @@
 ---
 title: Online Courses
-taxonomy: "Online Courses"
+image:
   thumbnail: '/assets/online_courses.jpg'
+taxonomy: "Online Courses"
 layout: category
-permalink: /categories/onlinecourses/
 entries_layout: grid
 limit: 3
 ---
