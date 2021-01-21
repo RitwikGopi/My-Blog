@@ -37,6 +37,17 @@ footer_links:
     icon: fab fa-instagram
 
 tag_archive_path: "/tags/#"
+categories_archive_path: "/tags/#"
+
+defaults:
+  # Post defaults
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: post
+      comments: true
+      share: true
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: "/assets/cover.png"
@@ -88,17 +99,17 @@ baseurl:
 # !! You don't need to change any of the configuration flags below !!
 #
 
-permalink: /:title/
+permalink: /:categories/:title/
 
 # # Taxonomy pages
-# category_archive_path: "/categories/#"
+category_archive_path: "/categories/"
 # tag_archive_path: "/tags/"
 
 # Collections
 collections:
-  categories:
+  category:
     output: false
-    permalink: /:collection/:path/
+    permalink: /categories/:title/
 
 # The release of Jekyll Now that you're using
 version: v1.2.0

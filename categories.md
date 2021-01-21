@@ -1,7 +1,8 @@
 ---
 title: Category Archive
-layout: categories
+layout: collections
+collection: category
 permalink: /categories/
-show_excerpts: true
-entries_layout: list
+show_excerpts: false
+entries_layout: grid
 ---
