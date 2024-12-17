@@ -1,5 +1,25 @@
+---
+layout: post
+title: "Making sense of python GIL’s impact on threading"
+share: true
+image:
+  thumbnail: "/assets/2024/python-gil.png"
+excerpt: ""
+date: 2024-12-17 18:50:00.000000000 +05:30
+type: post
+status: publish
+categories:
+  - Technical
+tags:
+  - python
+  - GIL
+  - multithreading
+  - threading
+  - parallelism
+permalink: "/2024/12/17/1/"
+---
 
-## Making sense of python GIL’s impact on threading
+# Making sense of python GIL’s impact on threading
 
 I have been working with python for around a decade now. I knew [GIL](https://realpython.com/python-gil/) existed in python, but never really thought about it much since most of the time I was dealing with low load servers or simple scripts. Recently at work I started working on projects with a higher volume of requests and had to explore the performance optimisation aspects. During different topics that I had to explore, GIL was the one that caught my attention. I thought why not explore this with some practical example.
 
