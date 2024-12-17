@@ -50,7 +50,8 @@ In the approach 1 what we will do is we will simply loop over the list of number
         return result
 
 **Result** 
-> [loop]: Total time for 5 calls: 157.2251 seconds
+
+`[loop]: Total time for 5 calls: 157.2251 seconds`
 
 This will be our base line performance. And we will see what improvements we can make.
 
@@ -72,6 +73,7 @@ This is probably a common approach some one will think of when we need performan
                 future.result()
 
 **Result**
+
 > [split_threaded]: Total time for 5 calls: 168.8397 seconds
 
 Surprisingly what we observe is an even worse performance than the sequential processing. The reason for this is 
