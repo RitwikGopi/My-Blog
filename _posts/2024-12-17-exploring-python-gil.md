@@ -74,7 +74,7 @@ This is probably a common approach some one will think of when we need performan
 
 **Result**
 
-> [split_threaded]: Total time for 5 calls: 168.8397 seconds
+`[split_threaded]: Total time for 5 calls: 168.8397 seconds`
 
 Surprisingly what we observe is an even worse performance than the sequential processing. The reason for this is 
 
@@ -99,7 +99,8 @@ So while the threading failed to make the performance improvements, does that me
             pool.map(loop, inputs)
 
 **Result**
-> [split_multiprocessing]: Total time for 5 calls: 70.2142 seconds
+
+`[split_multiprocessing]: Total time for 5 calls: 70.2142 seconds`
 
 Now we can see a clear difference in the performance. It has improved a lot.
 
@@ -149,7 +150,8 @@ And I will again split the input to 4 parts and make API calls to the /loop endp
                 future.result()
 
 **Result**
-> [split_threaded_api]: Total time for 5 calls: 100.1269 seconds
+
+`[split_threaded_api]: Total time for 5 calls: 100.1269 seconds`
 
 While not as good as earlier we still have a much better performance. Now since the main script is actually waiting on the IO for results from endpoint the effect of GIL is not becoming a bottleneck.
 
