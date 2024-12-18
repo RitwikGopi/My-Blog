@@ -159,11 +159,11 @@ In IO-bound tasks like network calls or file reads, Python releases the GIL whil
 
 ## Closing Thoughts
 
-You might be wondering why don’t I use the multiprocessing always and ditch the threading all together? You can but it will come at a cost. Threads are much light weight compared to a process since threads have a shared memory space while multiprocess has separate memory space. This also makes data transfer between processes tougher. 
+You might be wondering why don’t I use the multiprocessing always and ditch the threading all together? You can but it will come at a cost. Threads are much more light weight compared to a process, one of the reasons being — multiple threads have a shared memory space while multiple processes have separate memory spaces. This also makes data transfer between processes tougher. 
 
 So basically which one to use will boil down to your specific use case and the nature of the load. For IO bound workload you could get away with threading while for CPU bound you might need multiprocessing.
 
-Also the understating of this helps you configure the HTTP server’s like gunicorn. For CPU heavy servers you would probably need more workers and lesser threads while for IO bound heavy server you could have larger number of threads. Also the multi processing parallelism will be limited by the number of CPU cores your machine have since that is the maximum true parallelism that we can achieve. While the threads when used for IO bound applications we can go beyond CPU cores since these work in concurrent manner waiting for IO operations. 
+Also the understanding of this helps you configure the HTTP server’s like gunicorn. For CPU heavy servers you would probably need more workers and lesser threads while for IO bound heavy server you could have larger number of threads. Also the multi processing parallelism will be limited by the number of CPU cores your machine have since that is the maximum true parallelism that we can achieve. While the threads when used for IO bound applications we can go beyond CPU cores since these work in concurrent manner waiting for IO operations. 
 
 * **CPU-bound tasks** → Use **multiprocessing**.
 
