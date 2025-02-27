@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Making sense of python GIL’s impact on threading"
+title: "LLMs Are Great, but Not Intelligent"
 share: true
 image:
   thumbnail: "/assets/2025/llm.jpeg"
@@ -18,8 +18,6 @@ tags:
   - open source
 permalink: "/2025/02/27/1/"
 ---
-
-# LLMs Are Great, but Not Intelligent
 
 ## Introduction
 Don’t get me wrong—I've been using LLMs and their tools for some time now. I use them daily, and I work at a company that leverages LLMs to solve real pain points for customers([Unstract](https://github.com/Zipstack/unstract) is an open source platform that helps customers extract structured data from unstructured documents with the power of LLMs). So, I’m not saying LLMs are useless. Let’s get that out of the way.
