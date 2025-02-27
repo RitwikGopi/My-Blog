@@ -19,8 +19,6 @@ tags:
 permalink: "/2024/12/17/1/"
 ---
 
-# Making sense of python GIL’s impact on threading
-
 I have been working with python for around a decade now. I knew [GIL](https://realpython.com/python-gil/) existed in python, but never really thought about it much since most of the time I was dealing with low load servers or simple scripts. Recently at work I started working on projects with a higher volume of requests and had to explore the performance optimisation aspects. During different topics that I had to explore, GIL was the one that caught my attention. I thought why not explore this with some practical example.
 
 Before diving into its practical impacts, let’s briefly explain what GIL is: The Global Interpreter Lock (GIL) is a mechanism in Python that allows only one thread to execute Python bytecode at a time, even on multi-core systems.
